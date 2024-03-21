@@ -21,25 +21,24 @@ while True:
         retvinkel = input("Hvilken trekant er det?(a: Retvinklet  b: Vilkårlig trekant)").lower()
         if retvinkel == "a":
             print("Trekant er retvinklet")
+            kendteSider = int(input("Hvor mange sider kender du?"))
             #Spørger om sider og bruger dem i pythagoras for at finde side længder.
             while True:
-                kendteSider = int(input("Hvor mange sider i trekanten kender du?(0 , 1 , 2)"))
                 if kendteSider == 2:
                     print("Du kender 2 sider")
 
                     print("        b    ")
-                    print("   ___________")
-                    print("  |__________/")
-                    print("  |_________/")
-                    print("  |________/")
-                    print("  |_______/")
-                    print("a |______/ c")
-                    print("  |_____/")
-                    print("  |____/")
-                    print("  |___/")
-                    print("  |__/")
-                    print("  |_/")
-                    print("  |/")
+                    print("  C............A")
+                    print("  .           .")
+                    print("  .         .")
+                    print("  .        .")
+                    print("  .       .")
+                    print("a .      . c")
+                    print("  .     .")
+                    print("  .    .")
+                    print("  .   .")
+                    print("  .  .")
+                    print("  .B.")
 
                     ukendteSide = input("Hvilken side kender du ikke? (a,b,c)")
                     print("Du kender ikke side ", ukendteSide)
@@ -91,19 +90,46 @@ while True:
 
 
 
-                elif kendteSider == 1 or 0:
+                elif kendteSider == 1:
                     print("Hvor mange vinkler i trekanten kender du?(0 , 1 , 2)(Udover den rettevinkel)")
                     kendteVinkler = int(input())
-                    if kendteVinkler == 1 and kendteSider == 1:
-                        kendteVinkelPos = input("Hvilken vinkel kender du? (a, b)").lower()
-                        if kendteVinkelPos  == "a":
-                            math.acos()
+                    if kendteVinkler == 1:
+                        kendteVinkelPos = input("Hvilken vinkel kender du? (A, B)").upper()
+                        kendteSidePos = input("Hvilken side kender du? (a,b,c)").lower()
+                        if kendteVinkelPos  == "A" and kendteSidePos == "c":
+                            kendteVinkelC = float(90)
+                            print("Hvor stor er vinkel", kendteVinkelPos, "?")
+                            kendteVinkelA = float(input())
+                            ukendteVinkel = "B"
+                            ukendteSide1 = "b"
+                            ukendteSide2 = "a"
+                            print("Hvor stor er side", kendteSidePos, "?")
+                            kendteSideC = float(input())
+
+
+
+
+
+                    else:
+                        pass
+
+                        if kendteVinkelPos  == "A" and kendteSidePos == "c":
+                                ukendteSide1 = "b"
+                                ukendteSide2 = "a"
+                                vinkelC = int(input("Hvor stor er vinkel C?"))
+                                print("math.cos(vinkelC), = ukendteSide1/ukendteSide2")
 
 
                         #TODO: Udregn med cosinus eller sinus
                     break
-                else:
+
+                elif kendteSider == 0:
+                    print("Ikke nok information")
                     continue
+                else:
+                    print("Forkert tast. Prøv Igen")
+                    continue
+                kendteSider = int(input("Hvor mange sider i trekanten kender du?(0 , 1 , 2)"))
 
         elif retvinkel == "b":
             # TODO: Gør vilkårlig trekants beregner funktionel
